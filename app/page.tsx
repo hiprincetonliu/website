@@ -143,6 +143,7 @@ export default function Home() {
 // Sub-component for Project Cards
 function ProjectCard({ project }: { project: Project }) {
 	return (
+		
 		<div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-blue-800 transition-all hover:shadow-blue-900/20 hover:border-white-700">
 			<div className="p-6">
 				<h3 className="text-xl font-bold text-white">{project.title}</h3>
