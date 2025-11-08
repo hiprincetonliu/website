@@ -131,7 +131,7 @@ export default function Home() {
 				</main>
 
 				{/* Footer */}
-				<footer className="text-center text-gray-500 py-12 mt-12">
+				<footer className="text-center text-gray-500 py-12 mt-12 select-none">
 					© {new Date().getFullYear()} {portfolioData.name}.
 					Built with React & Tailwind.
 				</footer>
