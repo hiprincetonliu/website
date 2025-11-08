@@ -43,7 +43,7 @@ export default function Home() {
 						<h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
 							{portfolioData.name}
 						</h1>
-						<p className="mt-4 text-2xl sm:text-3xl text-blue-400 font-medium">
+						<p className="mt-4 text-2xl sm:text-3xl text-green-400 font-medium">
 							{portfolioData.headline}
 						</p>
 						<p className="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
@@ -75,6 +75,18 @@ export default function Home() {
 						</div>
 					</section>
 
+					{/* Projects Section */}
+					<section id="projects">
+						<h2 className="text-3xl font-bold text-white text-center">
+							Projects
+						</h2>
+						<div className="mt-8 grid md:grid-cols-2 gap-8">
+							{portfolioData.projects.map((project) => (
+								<ProjectCard key={project.title} project={project} />
+							))}
+						</div>
+					</section>
+
 					{/* Skills Section */}
 					<section id="skills">
 						<h2 className="text-3xl font-bold text-white text-center">
@@ -84,22 +96,10 @@ export default function Home() {
 							{portfolioData.skills.map((skill) => (
 								<span
 									key={skill}
-									className="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-sm font-medium"
+									className="bg-gray-800 text-green-300 px-4 py-2 rounded-full text-sm font-medium"
 								>
 									{skill}
 								</span>
-							))}
-						</div>
-					</section>
-
-					{/* Projects Section */}
-					<section id="projects">
-						<h2 className="text-3xl font-bold text-white text-center">
-							Projects
-						</h2>
-						<div className="mt-8 grid md:grid-cols-2 gap-8">
-							{portfolioData.projects.map((project) => (
-								<ProjectCard key={project.title} project={project} />
 							))}
 						</div>
 					</section>
@@ -143,7 +143,7 @@ export default function Home() {
 // Sub-component for Project Cards
 function ProjectCard({ project }: { project: Project }) {
 	return (
-		<div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800 transition-all hover:shadow-blue-900/20 hover:border-gray-700">
+		<div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-blue-800 transition-all hover:shadow-blue-900/20 hover:border-white-700">
 			<div className="p-6">
 				<h3 className="text-xl font-bold text-white">{project.title}</h3>
 				<p className="mt-3 text-gray-300 text-base">{project.description}</p>
@@ -151,7 +151,7 @@ function ProjectCard({ project }: { project: Project }) {
 					{project.stack.map((tech) => (
 						<span
 							key={tech}
-							className="bg-gray-800 text-blue-300 px-3 py-1 rounded-full text-xs font-medium"
+							className="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-xs font-medium"
 						>
 							{tech}
 						</span>
@@ -192,12 +192,12 @@ function ExperienceItem({ exp }: { exp: Experience }) {
 		<div className="flex">
 			<div className="shrink-0 mr-4">
 				<span className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-800 border border-gray-700">
-					<Briefcase className="w-5 h-5 text-blue-400" />
+					<Briefcase className="w-5 h-5 text-green-400" />
 				</span>
 			</div>
 			<div className="grow">
 				<h3 className="text-lg font-bold text-white">{exp.role}</h3>
-				<p className="text-blue-300 font-medium">{exp.company}</p>
+				<p className="text-green-300 font-medium">{exp.company}</p>
 				<div className="flex flex-wrap text-sm text-gray-400 mt-1 space-x-4">
 					<span className="flex items-center">
 						<Calendar className="w-4 h-4 mr-1.5" />
@@ -222,12 +222,12 @@ function EducationItem({ edu }: { edu: Education }) {
 		<div className="flex">
 			<div className="shrink-0 mr-4">
 				<span className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-800 border border-gray-700">
-					<Award className="w-5 h-5 text-blue-400" />
+					<Award className="w-5 h-5 text-green-400" />
 				</span>
 			</div>
 			<div className="grow">
 				<h3 className="text-lg font-bold text-white">{edu.degree}</h3>
-				<p className="text-blue-300 font-medium">{edu.institution}</p>
+				<p className="text-green-300 font-medium">{edu.institution}</p>
 				<p className="text-sm text-gray-400 mt-1">{edu.date}</p>
 				{edu.note && <p className="mt-2 text-gray-300">{edu.note}</p>}
 			</div>
